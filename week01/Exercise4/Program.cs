@@ -6,79 +6,78 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Exercise4 Project.");
 
-        
-        // This program will get the user input numbers and store in a list.
-        // Then the program will compute the total of sum, the average and the biggest number
+        // This activity is mainly focus on about list 
 
-        // Create a list for user input number
+        // Create a int list for user number
         List<int> numbers = new List<int>();
 
-        int userNum = 999999999;
+        // ---------------------------------------------------------------
+        // Create a valuable to store user input number 
+        int userNumber = -1;
 
-        // This while loop will run until user enter 0
-        while (userNum != 0)
+        // Create a valuable to store total sum
+        float total = 0;
+
+        // Create a valuable to store an average number of the list
+        float average = 0;
+
+        // Create a valuable to store the largest number in the list
+        int largestNumber = 0;
+
+        // Create a valuable to store the smallest positive number in the list
+        int smallestPosNumber = 999999999;
+        // -------------------------------------------------------------------
+
+        // Use while loop to get series of number from user
+        while (userNumber != 0)
         {
-            // Get the number from user and store as integer
-            Console.Write("Enter the number please: ");
-            string userInput = Console.ReadLine();
-            userNum = int.Parse(userInput);
+            // Take user input
+            Console.Write("Enter the number you like (enter 0 to quit!) : ");
+            string userNum = Console.ReadLine(); // store the user input as string 
+            userNumber = int.Parse(userNum); // Convert a string to int number 
 
-            // Add the user input number to a list
-            // Check the user enter 0 or not. If user enter 0,remove from the list
-            if (userNum != 0)
+            // Check user enter 0 or not if not 0 add into numbers list
+            if (userNumber != 0)
             {
-                numbers.Add(userNum);
+                numbers.Add(userNumber);
+            }
+            else
+            {
+                Console.WriteLine("Thank you! Here are some calculation of your number!");
             }
         }
-        // Create a variable for total sum 
-        int totalSum = 0;
-
-        // Create a variable for the largest number in the list
-        int largestNum = 0;
-
-        // Stretch challenge 1 
-        // Create a variable for the smallest positive number in the list
-        int smallestPositiveNum = 999999999;
-
-        // Use for loop to Iterate the numbers list
+        // Iterating though number list using foreach loops
         foreach (int number in numbers)
         {
-            // Get the total sum 
-            totalSum += number;
-
-            // Get the largest number in the list using if statement 
-            if (number > largestNum)
+            // using if statement to get the largest number 
+            if (number > largestNumber)
             {
-                largestNum = number;
+                largestNumber = number;
+            }        
+
+            // Get the smallest number from the list
+            if (number < smallestPosNumber && number > 0 )
+            {
+                smallestPosNumber = number;
             }
 
-            // Get the smallest number in the list using if statement
-            if ((number < smallestPositiveNum) && (number > 0 ))
-            {
-                smallestPositiveNum = number;
-            }
+            total += number; // plus all of the numbers in a list one by one
 
+            // Get the average number from list 
+            average = total / numbers.Count;
         }
-        // Get the average amount of the number in the list
-        int average = totalSum / numbers.Count;
 
-        Console.WriteLine("");  // Make the line clear and look good
-        Console.WriteLine($"The total sum is {totalSum}");
-        Console.WriteLine($"The average amount is {average}");
-        Console.WriteLine($"The largest number is {largestNum}");
-        Console.WriteLine($"The smallest number is {smallestPositiveNum}");
+        // Display the result 
+        Console.WriteLine($"The sum of total is {total}");
+        Console.WriteLine($"The average number is {average}");
+        Console.WriteLine($"The largest number is {largestNumber}");
+        Console.WriteLine($"The smallest positive number is {smallestPosNumber}");
+        Console.WriteLine("The sorted number list is : ");
 
-        Console.WriteLine("");  // Make the line clear and look good
-
-        // Stretch challenge 2
-        // Sort the list from smallest number to biggest number 
         numbers.Sort();
-
-        // Display the sorted list 
-        Console.WriteLine("This is the sorted list starting from smallest to biggest.");
         foreach (int number in numbers)
         {
-            Console.WriteLine(number);
+            Console.WriteLine($"{number}");
         }
     }
-}
+}   

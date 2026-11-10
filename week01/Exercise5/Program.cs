@@ -9,48 +9,48 @@ class Program
         // This is exercise 5
         // In this program, the main focus is about function
 
-        // Create DisplayWelcome function
-        static void DisplayWelcome()
+        // Create a function for display the message
+        static void DisplayWelcome() // This function will just display the message
         {
             Console.WriteLine("Welcome to the Program!");
         }
 
-        // Create PromptUserName function
-        static string PromptUserName()
+        static string PromptUserName() // This function will ask the user name and return as a string 
         {
-            // Get the user name 
-            Console.Write("Enter your name : ");
-            string userName = Console.ReadLine();
+            // Ask the user name 
+            Console.Write("What is your name ? ");
+            string userName = Console.ReadLine(); // Stored in a valuable 
             return userName;
         }
-
-        // Create PromptUserNumber function
-        static int PromptUserNumber()
+        static int PromptUserNumber() // This function will ask the user favorite number and return as a int
         {
-            // Get the user number and return
+            // Ask the user favorite number 
             Console.Write("Enter your favorite number : ");
-            string favoriteLetter = Console.ReadLine();
-            int favoriteNum = int.Parse(favoriteLetter);
-            return favoriteNum;
+            string userInput = Console.ReadLine(); // Stored the user input as a string first
+            int userNumber = int.Parse(userInput); // Then convert into int
+
+            return userNumber;
         }
 
-        // Create SquareNumber function
-        static int SquareNumber(int number)
+        // Create the function to make the user fav number convert squared number 
+        static int SquareNumber(int number) // This function will take one parameter and make it squared. Then return as int
         {
-            // Get the user favorite number and square it. Then return it
-            int squareNum = number * number;
-            return squareNum;
+            int squaredNumber = number * number;
+            return squaredNumber;
         }
 
-        // Create DisplayResult function
-        static void DisplayResult(string userName , int squareNumber)
+        // Create the final function to display the result
+        static void DisplayResult(string userName , int squaredNumber) // This function will display the final result
         {
-            // Display the square number and your name 
-            Console.WriteLine($"{userName}, the square of your favorite number is {squareNumber}");
+            Console.WriteLine($"{userName}, the square of your favorite number is {squaredNumber}");
+            return;
         }
 
-        // Call of the function
-        DisplayWelcome();
-        DisplayResult(PromptUserName(), SquareNumber(PromptUserNumber()));
+        string userName = PromptUserName();
+        int SquaredNumber = PromptUserNumber();
+
+        DisplayResult(userName, SquareNumber(SquaredNumber));
+
     }
-}
+}         
+        

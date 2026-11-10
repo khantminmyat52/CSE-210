@@ -15,7 +15,7 @@ class Program
 
             // Get random magic number
             Random randomGenerator = new Random();
-            int magicNumber = randomGenerator.Next(1, 100);
+            int magicNumber = randomGenerator.Next(0, 100);
 
             // This valuable guessNumber is to run the while 
             int guessNumber = -1;
