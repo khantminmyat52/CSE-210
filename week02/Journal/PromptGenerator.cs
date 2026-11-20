@@ -1,19 +1,14 @@
-using System;
-using System.Collections.Generic;
-
 public class PromptGenerator
 {
-    // List of inspiring prompts for the journal
     public List<string> _prompts = new List<string>()
     {
-        "Who was the most interesting person I interacted with today?",
-        "What was the best part of my day?",
-        "How did I see the hand of the Lord in my life today?",
-        "What was the strongest emotion I felt today?",
-        "If I had one thing I could do over today, what would it be?"
+        "What is the most important thing to do this week?",
+        "Who do you have to meet today?",
+        "When do you have to play your games?",
+        "Which movie would you like to watch?",
+        "How many kilometer do you have to run today?"
     };
 
-    // Method to get a random prompt from the list
     public string GetRandomPrompt()
     {
         Random random = new Random();
